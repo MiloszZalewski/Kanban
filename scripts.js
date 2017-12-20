@@ -24,7 +24,7 @@ function createColumn() {
      var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
 
     // ADDING EVENTS
-     $columnDelete.click(function() {
+     $columnDelete.on('click', function() {
         self.removeColumn();
     });
 
@@ -65,7 +65,7 @@ function createCard() {
     var $cardDelete = $('<button>').addClass('btn-delete').text('x');
 
     // BINDING TO CLICK EVENT
-    $cardDelete.click(function(){
+    $cardDelete.on('click', function(){
         self.removeCard();
     });
 
@@ -101,7 +101,7 @@ function initSortable() {
 }
 
 $('.create-column')
-  .click(function(){
+  .on('click', function(){
     var name = prompt('Enter a column name');
     var column = new Column(name);
         board.addColumn(column);
